@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servidor FiveM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Para evitar rolagem */
+            background-color: #000; /* Fundo preto */
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro com transparência */
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro com transparência */
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white; /* Texto branco */
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #cccccc; /* Cinza claro */
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro com mais opacidade */
+            color: white; /* Texto branco */
+        }
+        h1, h2, h3 {
+            color: white; /* Branco */
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro com transparência */
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            display: flex; /* Use flexbox para alinhar os itens */
+            justify-content: space-between; /* Espaço entre os itens */
+            align-items: center; /* Alinha verticalmente */
+        }
+        /* Estilo da imagem de fundo */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://cdn.discordapp.com/attachments/1282183836012384287/1290809138569543734/Diretor-geral_Vermelho_22.png?ex=67007230&is=66ff20b0&hm=5c58ce34584d5045ed2e169e1a1ab977317fd89f000de05a50a18043847f0be5');
+            background-size: cover; /* Para cobrir a área toda */
+            background-position: center; /* Centraliza a imagem */
+            z-index: -1; /* Coloca a imagem atrás do conteúdo */
+        }
+        .audio-player {
+            display: flex;
+            align-items: center; /* Centraliza verticalmente */
+        }
+    </style>
+    <script>
+        function toggleSection(sectionId) {
+            const sections = ['home', 'benefits', 'spoilers', 'streamers', 'developers'];
+            sections.forEach(id => {
+                const section = document.getElementById(id);
+                if (id === sectionId) {
+                    section.style.display = section.style.display === "block" ? "none" : "block";
+                } else {
+                    section.style.display = "none"; // Oculta as outras seções
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Bem-vindo ao nosso servidor <strong style="color: white;">VINTE2 RJ</strong>!</h1>
+</header>
+
+<nav id="nav"> <!-- Oculte o nav inicialmente -->
+    <div>
+        <a href="#" onclick="toggleSection('home')">Home</a>
+        <a href="https://discord.gg/vinte2rj" target="_blank">Discord</a>
+        <a href="https://22rj.hydrus.gg/" target="_blank">Loja VIP</a>
+        <a href="https://cfx.re/join/dl4a5j" target="_blank">Conectar ao Servidor</a>
+        <a href="#" onclick="toggleSection('benefits')">Benefícios Streamers</a>
+        <a href="#" class="accordion" onclick="toggleSection('spoilers')">Spoilers</a>
+        <a href="#" class="accordion" onclick="toggleSection('streamers')">Streamers</a>
+        <a href="#" class="accordion" onclick="toggleSection('developers')">Desenvolvedores</a> <!-- Nova aba -->
+    </div>
+</nav>
+
+<section id="home" style="display: none;"> <!-- Oculte a seção home inicialmente -->
+    <h2>Sobre Nós</h2>
+    <p><strong>Convite Especial para a Cidade Vinte2RJ</strong></p>
+    <p>Saudações, aventureiros e entusiastas do universo RP!</p>
+    <p>É com imenso prazer e entusiasmo que anunciamos a abertura das portas da vibrante e emocionante cidade de Vinte2RJ no FiveM!</p>
+    <h3>Sobre Vinte2RJ:</h3>
+    <p>Nossa cidade é um palco rico em oportunidades e histórias para serem vividas. Com uma infraestrutura detalhada e realista, Vinte2RJ oferece um ambiente dinâmico onde você pode explorar diversas facções, se envolver em atividades desafiadoras e construir sua própria trajetória. Se você busca um RP envolvente, realista e cheio de possibilidades, Vinte2RJ é o lugar perfeito para você!</p>
+    <h3>Facções Livres e Corps:</h3>
+    <p>Em Vinte2RJ, a liberdade é a nossa essência. Nossas facções são livres e abertas para que você possa criar e personalizar suas experiências de RP de acordo com sua criatividade. Além disso, você pode se juntar a corps (corporações) que oferecem carreiras e oportunidades únicas dentro do nosso universo.</p>
+    <h3>Vagas na Staff:</h3>
+    <p>Estamos em busca de indivíduos apaixonados e dedicados para integrar nossa equipe de staff. Se você possui habilidades organizacionais, criativas ou de gestão e deseja contribuir para a construção e manutenção deste incrível ambiente RP, suas habilidades são mais do que bem-vindas!</p>
+    <p>Venha fazer parte desta jornada! Seja para viver histórias épicas, criar facções ou ajudar a moldar o futuro da nossa cidade, Vinte2RJ está esperando por você. Não perca a chance de ser um protagonista neste universo vibrante e cheio de possibilidades.</p>
+    <p>Prepare-se para uma experiência imersiva e envolvente. Nos vemos em Vinte2RJ!</p>
+    <p>Atenciosamente,<br>Equipe Vinte2RJ</p>
+</section>
+
+<section class="benefits" id="benefits" style="display: none;"> <!-- Oculte as seções inicialmente -->
+    <h3>BENEFÍCIOS STREAMER</h3>
+    <p>Para manter seus benefícios, é importante continuar contribuindo com nossa cidade, mantendo suas transmissões ao vivo e seguindo nossas regras. Agradecemos por fazer parte do nosso time e em breve teremos novidades para todos. Obrigado pelo seu comprometimento e dedicação!</p>
+    <p><strong>Todos os nossos Streamers devem seguir o nosso padrão:</strong></p>
+    <ul>
+        <li>Realizar no mínimo 7 transmissões ao vivo em nossa cidade.</li>
+        <li>Incluir o nome da cidade no título da live (Ex: VINTE2 RJ);</li>
+        <li>Somente poderão divulgar suas transmissões ao vivo em nosso Discord se forem realizadas em nossa cidade.</li>
+    </ul>
+    <p>O descumprimento dessas regras pode resultar na remoção de seu cargo e benefícios. Agradecemos sua compreensão e colaboração.</p>
+    <h4>STREAMER NÍVEL 1:</h4>
+    <ul>
+        <li>Salário de 10mil a cada 30 Minutos.</li>
+        <li>Acesso ao Spotify 30 dias.</li>
+        <li>Carro: Corolla.</li>
+        <li>Moto: TITAN160.</li>
+    </ul>
+    <h4>STREAMER NÍVEL 2:</h4>
+    <ul>
+        <li>Acesso ao Spotify 30 dias.</li>
+        <li>Salário de 15mil a cada 30 Minutos.</li>
+        <li>Verificado Instagram 30 dias.</li>
+        <li>Carro: BMW M1.</li>
+        <li>Moto: CB650.</li>
+    </ul>
+    <h4>STREAMER NÍVEL 3:</h4>
+    <ul>
+        <li>Salário de 25mil a cada 30 Minutos.</li>
+        <li>Acesso ao Spotify 30 dias.</li>
+        <li>Verificado Instagram 30 dias.</li>
+        <li>Carro: Blindado X6 16 Tiros (30 dias).</li>
+        <li>Moto: R1200 (30 dias).</li>
+    </ul>
+</section>
+
+<section class="spoiler" id="spoilers" style="display: none;">
+    <h3>Próximas Atualizações:</h3>
+    <p>- Favelas vindo aí!!! 👀</p> <!-- Adicionada nova informação -->
+    <p>- Novo mapa em breve!</p>
+    <p>- Eventos semanais com prêmios exclusivos.</p>
+    <p>- [CEO] Menor Jotta 22rj — 02/10/2024 12:19</p>
+    <p>- BLINDADOS NOVOS ADICIONADOS (32/64/128 TIROS)</p>
+    <p>- REAJUSTE NO PREÇO DA LOJA!</p>
+    <p>- PROMOÇÃO SKIN DE ANÃO ATÉ DIA 05/10</p>
+    <p>- MESA NOVA SENDO ADICIONADA</p>
+    <p>- PAINEL TX ADICIONADO</p>
+</section>
+
+<section class="streamers" id="streamers" style="display: none;">
+    <h3>Canais dos Streamers:</h3>
+    <ul>
+        <li><a href="https://www.twitch.tv/xxandin011" target="_blank">xxandin011</a></li>
+        <li><a href="https://www.twitch.tv/tiago_meira_7" target="_blank">tiago_meira_7</a></li>
+        <li><a href="https://www.tiktok.com/@cafezinrp5?_t=8qFeWBBbfoT&_r=1" target="_blank">CafezinRP5</a></li> <!-- Novo canal -->
+        <li><a href="https://www.twitch.tv/piveterp" target="_blank">PiveterP</a></li> <!-- Novo canal -->
+    </ul>
+</section>
+
+<section class="developers" id="developers" style="display: none;"> <!-- Oculte as seções inicialmente -->
+    <h3>Desenvolvedores:</h3>
+    <ul>
+        <li>Jotta</li>
+        <li>Allan</li> <!-- Allan embaixo de Jotta -->
+        <li>Gorzin</li>
+        <li>Boltinho</li>
+        <li>Xandin</li>
+    </ul>
+</section>
+
+<footer>
+    <p style="color: white;">&copy; 2024 Servidor FiveM created by Xandin.</p> <!-- Atualizado -->
+    <div class="audio-player">
+        <audio controls autoplay loop>
+            <source src="https://rr4---sn-pmcg-bg0s.googlevideo.com/videoplayback?expire=1728037951&ei=32__Zu3VJraCi9oPzvmg-AM&ip=176.0.10.51&id=o-AIE7gh5TWCSKmP9k8gqfq49VferK87WUhEI-D1YqTtB-&itag=140&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&bui=AXLXGFTckJwzvuGmfi6R0kmf4IadoSfTLP-1Ul-lIPUGjUnE3Q-MdUt9H6-9LbnqswPAB8j6u2jlpatz&spc=54Mbxb1q5e3GqCngWN59nLG6MDKrq83CwGuFfgMKZk2vNWc&vprv=1&svpuc=1&mime=audio%2Fmp4&ns=rW2cvbnEIOrZnXWjn5znklEQ&rqh=1&gir=yes&clen=2612612&dur=161.378&lmt=1705664867010831&keepalive=yes&fexp=51300760&c=WEB&sefc=1&txp=4532434&n=Wpi9jN3ytwlhGQ&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&sig=AJfQdSswRAIgCU8LJBCxEQkdrLgUSCDhed0I3Jh4NUPrCC2eVwPYsVMCID5GHwdivosNfO01MDjhgff83mUKBSquYDFGzlEXZHMv&rm=sn-uxax4vopj5qx-cxgl7d,sn-4g5ekz7z&rrc=79,104&req_id=e449b1a25fbba3ee&met=1728016393,&rms=rdu,rdu&redirect_counter=2&cms_redirect=yes&cmsv=e&ipbypass=yes&mh=hL&mip=177.137.74.7&mm=29&mn=sn-pmcg-bg0s&ms=rdu&mt=1728015693&mv=u&mvi=4&pl=24&lsparams=ipbypass,met,mh,mip,mm,mn,ms,mv,mvi,pl,rms&lsig=ACJ0pHgwRQIhAPq3RJ0CeQicaxYKt2H924m2LSwb8K3R12CItYKAWDRwAiBOqmxK5YzHzok-S3Y6hQI4qpNzwbNSnCvFdxbfPqE6Ig%3D%3D" type="audio/mpeg">
+            Seu navegador não suporta o elemento audio.
+        </audio>
+    </div>
+</footer>
+
+</body>
+</html>
